@@ -1,0 +1,17 @@
+diff --git a/node_modules/@finos/perspective-viewer/src/js/utils.js b/node_modules/@finos/perspective-viewer/src/js/utils.js
+index 79e0335..9a3ae41 100644
+--- a/node_modules/@finos/perspective-viewer/src/js/utils.js
++++ b/node_modules/@finos/perspective-viewer/src/js/utils.js
+@@ -302,10 +302,10 @@ export function throttlePromise(target, property, descriptor, clear = false) {
+     // A function which clears the lock just like the main wrapper, but then
+     // does nothing.
+     descriptor.value.flush = async function(obj) {
+-        if (obj[lock]?.lock) {
++        if (obj[lock] && obj[lock].lock) {
+             await obj[lock].lock;
+             await new Promise(requestAnimationFrame);
+-            if (obj[lock]?.lock) {
++            if (obj[lock] && obj[lock].lock) {
+                 await obj[lock].lock;
+             }
+         }
