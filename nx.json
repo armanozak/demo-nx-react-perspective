@@ -1,5 +1,5 @@
 {
-  "npmScope": "demo-nx-react",
+  "npmScope": "demo-nx-react-perspective",
   "affected": {
     "defaultBase": "master"
   },
